@@ -3,12 +3,13 @@ import java.util.ArrayList;
 public class Train implements TrainRequirements {
     
     private Engine engine;
-    private ArrayList<Car> cars;
+    private ArrayList<Car> cars = null;
 
     public Train(FuelType fuelType, double currentFuelLevel, double fuelCapacity, int nCars, int passengerCapacity) {
-        this.engine = new Engine(fuelType, fuelCapacity);
+        this.engine = new Engine(fuelType, currentFuelLevel, fuelCapacity);
+        this.cars = new ArrayList<>(nCars);
         this.cars = new ArrayList<Car>(nCars);
-        this.setCarCapacity(passengerCapacity);
+        this.setCarsCapacity(nCars, passengerCapacity);
     }
 
     @Override
@@ -17,8 +18,8 @@ public class Train implements TrainRequirements {
     }
 
 
-    public void setCarCapacity(int capacity) {
-        for (int i = 0; i < cars.size(); i++) {
+    public void setCarsCapacity(int nCars, int capacity) {
+        for (int i = 0; i < nCars; i++) {
             Car car = new Car(capacity);
             cars.add(car);
         }

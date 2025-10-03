@@ -4,10 +4,10 @@ public class Engine implements EngineRequirements {
     private double maxFuel;
     private double currentLevelFuel;
 
-    public Engine(FuelType fuelType, double maxFuel) {
+    public Engine(FuelType fuelType, double currentFuelLevel, double maxFuel) {
         this.fuelType = fuelType;
         this.maxFuel = maxFuel;
-        this.currentLevelFuel = maxFuel;
+        this.currentLevelFuel = currentFuelLevel;
     }
 
     @Override

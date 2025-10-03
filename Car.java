@@ -13,7 +13,7 @@ public class Car implements CarRequirements {
         return maxCapacity;
     }
 
-    public int seatsRemaining() {
+    public int seatsRemaining() { 
         return maxCapacity - passengers.size();
     }
 
@@ -42,20 +42,14 @@ public class Car implements CarRequirements {
 
     public void printManifest() {
         if (passengers.size() == 0) {
-        System.out.println("THIS CAR IS EMPTY");
-            return;
-        }
+            System.out.println("THIS CAR IS EMPTY");
+        } else {
+            System.out.println("Current Passengers in the car:");
+            for (int i = 0; i < passengers.size(); i++) {
+                System.out.println(passengers.get(i).getName());
+            }
+    }
 
-        System.out.println("Current Passengers in the car:");
-        for (Passenger p : passengers) {
-            System.out.println(p.getName());
-        }
-
-        /*
-         * for (int i = 0; i < passengers.size(); i++) {
-         * System.out.println(passengers.get(i).getName());
-         * }
-         */
     }
     
 }
